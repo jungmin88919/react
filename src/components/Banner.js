@@ -13,21 +13,22 @@ const Banner = () => {
       spaceBetween={30}
       slidesPerView={1}
       autoplay={{ delay: 3000 }}
+      loop
     >
       <SwiperSlide>
-        <img src="/assets/mainslide01.jpg" alt="Banner 1" />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainslide01.jpg`} alt="슬라이드1" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/assets/mainslide02.jpg" alt="Banner 2" />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainslide02.jpg`} alt="슬라이드2" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/assets/mainslide03.jpg" alt="Banner 3" />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainslide03.jpg`} alt="슬라이드3" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/assets/mainslide04.jpg" alt="Banner 3" />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainslide04.jpg`} alt="슬라이드4" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/assets/mainslide05.jpg" alt="Banner 3" />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainslide05.jpg`} alt="슬라이드5" />
       </SwiperSlide>
     </Swiper>
   );

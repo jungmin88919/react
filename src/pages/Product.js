@@ -40,7 +40,7 @@ const ProductDetail = () => {
     <Wrapper>
       <Content>
         <ImageBox>
-          <Image src={product.image} alt={product.name} />
+          <Image src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
         </ImageBox>
         <Details>
           <Title>{product.name}</Title>

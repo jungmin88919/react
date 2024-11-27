@@ -29,7 +29,7 @@ const Home = () => {
         </p>
       </div>
       <div className="brand-img" style={styles.brandImg}>
-        <img src="/assets/mainbanner01.jpg" alt="" style={styles.productImg} />
+        <img src={`${process.env.PUBLIC_URL}/assets/mainbanner01.jpg`} alt="" style={styles.productImg} />
         <div>
           <h3 style={styles.brandTitle}>NEW PRODUCT</h3>
           <p style={styles.brandDesc}>
@@ -60,7 +60,7 @@ const Home = () => {
             <SwiperSlide key={product.id} onClick={() => handleSlideClick(product.id)} style={styles.swiperSlide}>
               <div style={{ textAlign: "center", cursor: "pointer" }}>
                 <img
-                  src={product.image}
+                  src={`${process.env.PUBLIC_URL}${product.image}`}
                   alt={product.name}
                   style={{ width: "100%", objectFit: "cover", marginBottom:"28px" }}
                 />
