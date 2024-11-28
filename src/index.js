@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename={process.env.PUBLIC_URL || "/"} future={{ v7_startTransition: true }}>
-        <App />
-      </BrowserRouter>
+      <BrowserRouter basename="/react" future={{ v7_startTransition: true }}>
+    <App />
+  </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { removeFromCart, updateQuantity } from "../redux/cartSlice";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
 
@@ -25,7 +27,7 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <div style={styles.emptyMessage}>
           <p>장바구니가 비어 있습니다.</p>
-          <button onClick={() => (window.location.href = "/react/shop")} style={styles.shopButton}>
+          <button onClick={() => navigate("/shop")} style={styles.shopButton}>
             쇼핑하러 가기
           </button>
         </div>
