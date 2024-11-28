@@ -10,7 +10,7 @@ const Shop = () => {
         {products.map((product) => (
           <ProductItem key={product.id}>
             <Link to={`/product/${product.id}`} style={{ textDecoration: "none", color: "#333" }}>
-              <ProductImage src={`${process.env.PUBLIC_URL}product.image`} alt={product.name} />
+              <ProductImage src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
               <ProductName>{product.name}</ProductName>
               <ProductPrice>{product.price.toLocaleString()}원</ProductPrice>
             </Link>
