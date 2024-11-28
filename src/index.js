@@ -13,8 +13,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter basename="/react" future={{ v7_startTransition: true }}>
-    <App />
-  </BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
