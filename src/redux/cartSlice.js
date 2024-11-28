@@ -2,16 +2,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: {
+    cartItems: [],
+  },
   reducers: {
-    addToCart: (state, action) => {
-      state.push(action.payload); // 불변성을 유지하지 않는 방식 (Redux Toolkit에서는 허용)
+    addToCart(state, action) {
+      state.cartItems.push(action.payload);
     },
-    removeFromCart: (state, action) => {
-      return state.filter((item) => item.id !== action.payload.id);
+    removeFromCart(state, action) {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    updateQuantity(state, action) {
+      const item = state.cartItems.find((item) => item.id === action.payload.id);
+      if (item) {
+        item.quantity = action.payload.quantity;
+      }
     },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

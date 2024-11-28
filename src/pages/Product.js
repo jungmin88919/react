@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addToCart } from "../redux/cartSlice";
 import products from "../mock/products.json";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [options, setOptions] = useState([]);
+  const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(product?.price || 0);
 
   const availableOptions = [
@@ -34,6 +39,26 @@ const ProductDetail = () => {
     const updated = options.filter((opt) => opt.name !== name);
     setOptions(updated);
     setPrice(updated.reduce((acc, curr) => acc + curr.price, 0));
+  };
+
+  // 장바구니에 추가
+  const handleAddToCart = () => {
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      price: price,
+      quantity: quantity,
+      options: options.map((opt) => opt.name), // 선택된 옵션
+      image: product.image,
+    };
+    dispatch(addToCart(cartItem));
+    alert("장바구니에 추가되었습니다!");
+  };
+
+  // 구매하기
+  const handleBuyNow = () => {
+    handleAddToCart(); // 먼저 장바구니에 추가
+    navigate("/cart"); // 장바구니 페이지로 이동
   };
 
   return (
@@ -84,9 +109,11 @@ const ProductDetail = () => {
           </Summary>
 
           <Buttons>
-            <ActionButton primary>구매하기</ActionButton>
-            <ActionButton>장바구니</ActionButton>
-          </Buttons>
+          <ActionButton primary onClick={handleBuyNow}>
+            구매하기
+          </ActionButton>
+          <ActionButton onClick={handleAddToCart}>장바구니</ActionButton>
+        </Buttons>
         </Details>
       </Content>
     </Wrapper>
@@ -98,7 +125,7 @@ export default ProductDetail;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 100px 20px;
 `;
 
 const Content = styled.div`

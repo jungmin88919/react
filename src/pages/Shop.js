@@ -6,6 +6,7 @@ import products from "../mock/products.json";
 const Shop = () => {
   return (
     <Container>
+      <Title>SHOP</Title>
       <ProductList>
         {products.map((product) => (
           <ProductItem key={product.id}>
@@ -28,6 +29,13 @@ const Container = styled.div`
   padding: 20px;
   max-width: 1200px;
   margin: 100px auto;
+`;
+
+const Title = styled.h2`
+  display:block;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 `;
 
 const ProductList = styled.div`
