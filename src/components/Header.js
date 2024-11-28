@@ -20,12 +20,13 @@ const Header = () => {
 const styles = {
   header: {
     display: "flex",
-    position:"relative",
+    position:"absolute",
+    zIndex:"10",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "10px 20px",
-    backgroundColor: "#f8f9fa",
-    borderBottom: "1px solid #ddd"
+    width:"100%",
+    height:"90px",
+    backgroundColor: "rgba(255,255,255,0.5)"
   },
   logo: {
     position:"absolute",
@@ -36,8 +37,7 @@ const styles = {
     fontWeight: "bold"
   },
   nav: {
-    display: "flex",
-    gap: "15px"
+    padding:"0 20px"
   },
   navLink: {
     textDecoration: "none",

@@ -27,12 +27,13 @@ export default Shop;
 const Container = styled.div`
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto;
 `;
 
 const ProductList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap:30px;
 `;
 
