@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import NotFound from "./pages/NotFound"; // 404 페이지 추가
+import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/reset.css";
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
-      <div style={{ flex: "1" }}>
+      <div style={{ position: "relative", top: "-90px", zIndex:"5" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />

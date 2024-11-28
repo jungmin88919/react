@@ -41,13 +41,12 @@ const Home = () => {
             시작해보세요.
           </p>
           <p style={styles.line}></p>
-          <button style={styles.button}>READ MORE</button>
+          <button style={styles.button} onClick={() => handleSlideClick()} >READ MORE</button>
         </div>
       </div>
       <div style={styles.productBox}>
         <h3 style={styles.brandTitle}>BEST PRODUCT</h3>
-        <p style={styles.brandDesc}
-        >당신의 일상을 반짝임으로 깨우는 글린트의 베스트 제품들을 만나보세요.</p>
+        <p style={styles.brandDesc}>당신의 일상을 반짝임으로 깨우는 글린트의 베스트 제품들을 만나보세요.</p>
         
         {/* Swiper 적용 */}
         <Swiper

@@ -20,7 +20,8 @@ const Header = () => {
 const styles = {
   header: {
     display: "flex",
-    position:"absolute",
+    position:"sticky",
+    top:"0",
     zIndex:"10",
     justifyContent: "space-between",
     alignItems: "center",

@@ -225,4 +225,5 @@ const Message = styled.p`
   text-align: center;
   font-size: 18px;
   color: #666;
+  margin: 200px auto
 `;
