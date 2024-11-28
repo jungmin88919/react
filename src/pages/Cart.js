@@ -25,7 +25,7 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <div style={styles.emptyMessage}>
           <p>장바구니가 비어 있습니다.</p>
-          <button onClick={() => (window.location.href = "/shop")} style={styles.shopButton}>
+          <button onClick={() => (window.location.href = "/react/shop")} style={styles.shopButton}>
             쇼핑하러 가기
           </button>
         </div>
@@ -98,13 +98,13 @@ const styles = {
     width: "80px",
     height: "100px",
     objectFit: "cover",
-    borderRadius: "8px",
-    paddinRight:"50px",
+    margin:"0 50px 0 0",
   },
   details: {
     display:"flex",
     justifyContent:"space-between",
     alignItems:"center",
+    width:"100%",
   },
   quantity: {
     display: "flex",
